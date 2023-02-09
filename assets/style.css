@@ -13,3 +13,8 @@
     font-family: 'Unbounded', cursive;
 
 }
+
+.cityDisplay {
+border-color: var(--dark);
+color: var(--light)
+}
