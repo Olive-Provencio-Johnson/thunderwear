@@ -14,10 +14,12 @@
 
 .btnMain {
     display: flex; 
-    
+
 }
 
 .cityDisplay {
 border-color: var(--dark);
-color: var(--light)
+border-width: 5px;
+border-style: solid;
+color: var(--light);
 }

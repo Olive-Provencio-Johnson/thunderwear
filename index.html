@@ -31,12 +31,12 @@
     </nav>
 
     <div>
-        <!-- Search bar content -->
+        <!-- Search bar content with form input -->
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
                 <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success btnMain" type="submit">Search</button>
+                    <input id="form-control" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button type="button" id="btnMain" class="btn btn-outline-success btnMain" onclick="getLatLon()">Search</button>
                 </form>
             </div>
         </nav>
@@ -65,9 +65,10 @@
             <!-- Current City Search Results & Display -->
             <div id="cityDisplay" class="cityDisplay">
                 <p class="col-12 col-md-8 col-lg-9">
-                <h5><i class="fa-solid fa-temperature-three-quarters"></i>Temp:</h5>
-                <h5><i class="fa-solid fa-wind"></i>Wind:</h5>
-                <h5><i class="fa-solid fa-glass-water-droplet"></i>Humidity:</h5>
+                <h5 id="currentCity">City: </h5>
+                    <h5 id="currentTemp"><i class="fa-solid fa-temperature-three-quarters"></i>Temp: </h5>
+                <h5 id="currentWind"><i class="fa-solid fa-wind"></i>Wind: </h5>
+                <h5 id="currentHumidity"><i class="fa-solid fa-glass-water-droplet"></i>Humidity: </h5>
                 </p>
                 <!-- Current City 5-Day Forecast Results & Display -->
                 <div id="fiveForecast" class="fiveForecast row">
