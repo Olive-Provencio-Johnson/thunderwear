@@ -1,2 +1,15 @@
 /* http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=32bd8e74f5dedfd3739fe74114309756 */
 
+:root {
+    --white: #fff;
+    --dark: #483d8b;
+    --light: #5F9EA0;
+    --border-radius: 50px;
+}
+
+.navbar {
+    font-family: 'Aboreto', cursive;
+    font-family: 'Bebas Neue', cursive;
+    font-family: 'Unbounded', cursive;
+
+}
