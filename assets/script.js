@@ -18,6 +18,7 @@ function getLatLon(){
     console.log(cityName);
     fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=32bd8e74f5dedfd3739fe74114309756").then((response) => response.json())
     .then((data) => {getWeatherData(data[0].lat, data[0].lon)});
+    //calling the API to get the Lat and Lon which will pass through the getWeatherData function below
 
 }
 
