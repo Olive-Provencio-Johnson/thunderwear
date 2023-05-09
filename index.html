@@ -34,99 +34,102 @@
         <!-- Search bar content with form input -->
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-                <form class="d-flex">
-                    <input id="form-control" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button type="button" id="btnMain" class="btn btn-outline-success btnMain" onclick="getLatLon()">Search</button>
+                <form class="d-flex" onSubmit="return false;">
+                    <input id="form-control" class="form-control" type="search" placeholder="Search" onsearch="getLatLon()"
+                        aria-label="Search">
+                    <button type="button" id="btnMain" class="btn btn-outline-success btnMain"
+                        onclick="getLatLon()">Search</button>
                 </form>
             </div>
         </nav>
-        <div class="largeRow col-12 col-md-8 col-lg-9">
+        <div class="firstRow col-12">
             <!-- Quick City Search Buttons -->
-            <nav id="cityNav" class="cityNav">
-                <div id="cityOne" class="city"><button class="btn btn-outline-success" type="submit">Atlanta</button>
+            <nav id="cityNav" class="cityNav col-sm-2 sidenav">
+                <div id="cityOne" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('Atlanta')">Atlanta</button>
                 </div>
-                <div id="cityTwo" class="city"><button class="btn btn-outline-success" type="submit">Denver</button>
+                <div id="cityTwo" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('Denver')">Denver</button>
                 </div>
-                <div id="cityThree" class="city"><button class="btn btn-outline-success" type="submit">Seattle</button>
+                <div id="cityThree" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('Seattle')">Seattle</button>
                 </div>
-                <div id="cityFour" class="city"><button class="btn btn-outline-success" type="submit">San
+                <div id="cityFour" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('San Francisco')">San
                         Francisco</button></div>
-                <div id="cityFive" class="city"><button class="btn btn-outline-success" type="submit">Orlando</button>
+                <div id="cityFive" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('Orlando')">Orlando</button>
                 </div>
-                <div id="citySix" class="city"><button class="btn btn-outline-success" type="submit">New York</button>
+                <div id="citySix" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('New York')">New York</button>
                 </div>
-                <div id="citySeven" class="city"><button class="btn btn-outline-success" type="submit">Chicago</button>
+                <div id="citySeven" class="city"><button class="btn btn-outline-success" type="submit" onclick="getLatLon('Chicago')">Chicago</button>
                 </div>
                 <div id="cityEight" class="city"><button class="btn btn-outline-success" type="submit">Austin</button>
                 </div>
             </nav>
-        </div>
-        <div class="container current-info">
-            <!-- Current City Search Results & Display -->
-            <div id="cityDisplay" class="cityDisplay">
-                <p class="col-12 col-md-8 col-lg-9">
-                <h5 id="currentCity">City: </h5>
+            <div class="container current-info col-9 text-left">
+                <!-- Current City Search Results & Display -->
+                <div id="cityDisplay" class="cityDisplay">
+                    <p class="col-12 col-md-8 col-lg-9">
+                    <h5 id="currentCity">City: </h5>
                     <h5 id="currentTemp"><i class="fa-solid fa-temperature-three-quarters"></i>Temp: </h5>
-                <h5 id="currentWind"><i class="fa-solid fa-wind"></i>Wind: </h5>
-                <h5 id="currentHumidity"><i class="fa-solid fa-glass-water-droplet"></i>Humidity: </h5>
-                </p>
-                <!-- Current City 5-Day Forecast Results & Display -->
-                <div id="fiveForecast" class="fiveForecast row">
-                    <div id="dayOne" class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Day 1 Info & Icon Placeholder</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item temp">Temp</li>
-                            <li class="list-group-item wind">Wind</li>
-                            <li class="list-group-item humidity">Humidity</li>
-                        </ul>
-                    </div>
-                    <div id="dayTwo" class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Day 2 Info & Icon Placeholder</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item temp">Temp</li>
-                            <li class="list-group-item wind">Wind</li>
-                            <li class="list-group-item humidity">Humidity</li>
-                        </ul>
-                    </div>
-                    <div id="dayThree" class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Day 3 Info & Icon Placeholder</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item temp">Temp</li>
-                            <li class="list-group-item wind">Wind</li>
-                            <li class="list-group-item humidity">Humidity</li>
-                        </ul>
-                    </div>
-                    <div id="dayFour" class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Day 4 Info & Icon Placeholder</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item temp">Temp</li>
-                            <li class="list-group-item wind">Wind</li>
-                            <li class="list-group-item humidity">Humidity</li>
-                        </ul>
-                    </div>
-                    <div id="dayFive" class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Day 5 Info & Icon Placeholder</h5>
-                        </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item temp">Temp</li>
-                            <li class="list-group-item wind">Wind</li>
-                            <li class="list-group-item humidity">Humidity</li>
-                        </ul>
-                    </div>
+                    <h5 id="currentWind"><i class="fa-solid fa-wind"></i>Wind: </h5>
+                    <h5 id="currentHumidity"><i class="fa-solid fa-glass-water-droplet"></i>Humidity: </h5>
+                    </p>
                 </div>
             </div>
         </div>
         <!-- What to Wear Today based on search results -->
         <div id="outfit" class="outfit">
+        </div>
+    </div>
+
+    <!-- Current City 5-Day Forecast Results & Display -->
+    <div id="fiveForecast" class="fiveForecast row">
+        <div id="dayOne" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="date-0"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="temp-0">Temp: </li>
+                <li class="list-group-item" id="wind-0">Wind: </li>
+                <li class="list-group-item" id="humidity-0">Humidity: </li>
+            </ul>
+        </div>
+        <div id="dayTwo" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="date-1"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="temp-1">Temp: </li>
+                <li class="list-group-item" id="wind-1">Wind: </li>
+                <li class="list-group-item" id="humidity-1">Humidity: </li>
+            </ul>
+        </div>
+        <div id="dayThree" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="date-2"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="temp-2">Temp: </li>
+                <li class="list-group-item" id="wind-2">Wind: </li>
+                <li class="list-group-item" id="humidity-2">Humidity: </li>
+            </ul>
+        </div>
+        <div id="dayFour" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="date-3"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="temp-3">Temp: </li>
+                <li class="list-group-item" id="wind-3">Wind: </li>
+                <li class="list-group-item" id="humidity-3">Humidity: </li>
+            </ul>
+        </div>
+        <div id="dayFive" class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" id="date-4"></h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" id="temp-4">Temp: </li>
+                <li class="list-group-item" id="wind-4">Wind: </li>
+                <li class="list-group-item" id="humidity-4">Humidity: </li>
+            </ul>
         </div>
     </div>
     </div>
